@@ -38,6 +38,7 @@ public class LanguageModel {
         In in = new In(fileName);
         List probs = new List();
 
+        // Read in the first windowLength characters
         for (int i = 0; i < windowLength; i++) {
             if (!in.isEmpty()) {
                 c = in.readChar();
@@ -45,6 +46,7 @@ public class LanguageModel {
             }
         }
 
+        // Read in the rest of the file and update the model
         while (!in.isEmpty()) {
             c = in.readChar();
 
@@ -138,6 +140,7 @@ public class LanguageModel {
 		return str.toString();
 	}
 
+    // creates a new LanguageModel object, trains it, and returns it
     public static void main(String[] args) {
 		int windowLength = Integer.parseInt(args[0]);
         String initialText = args[1];
