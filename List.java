@@ -50,7 +50,7 @@ public class List {
         Node curr = this.first;
 
         while (curr != null) {
-            s += curr.cp.toString();
+            s += curr.cp.toString() + " ";
             curr = curr.next;
         }
 
